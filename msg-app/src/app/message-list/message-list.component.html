@@ -1,0 +1,6 @@
+<div  class="list-group pb-3">
+    <a *ngFor="let msg of messages$|async" [routerLink]="['/message',msg.id]" class="list-group-item list-group-item-action">
+        {{msg.messageText}}
+    </a>
+</div>
+<a [routerLink]="['/message','new']" class="btn btn-dark">New Message</a>

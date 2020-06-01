@@ -1,0 +1,6 @@
+<input *ngIf="message$|async as msg" required class="form-control" placeholder="Enter your message"
+    [(ngModel)]="msg.messageText" (ngModelChange)="dataChanged($event)">
+
+<button type="button" class="btn btn-primary mt-2 mr-2" (click)="saveMessage()">Save</button>
+<a [routerLink]="['/messages']" type="button" class="btn btn-secondary mt-2 mr-2">Cancel</a>
+<button *ngIf="(message$|async)?.id" type="button" class="btn btn-danger mt-2" (click)="deleteMessage()">Delete</button>
